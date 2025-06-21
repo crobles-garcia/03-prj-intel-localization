@@ -185,7 +185,7 @@
     .card:focus .description {
       display: block !important;
     }
-    /* Visually hidden utility */
+    /* Add visually hidden utility for accessibility */
     .visually-hidden {
       position: absolute;
       width: 1px;
@@ -201,68 +201,147 @@
 <body>
   <header>
     <img src="img/intel-header-logo.svg" alt="Intel Logo" class="logo">
-    <h1>SUSTAINABILITY THROUGH THE AGES</h1>
-    <p class="subtitle">Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.</p>
-    <div style="margin-top:20px;">
-      <label for="rtl-toggle" style="font-size:1em;">Switch direction:</label>
-      <button id="rtl-toggle" aria-pressed="false" aria-label="Switch to right-to-left layout" style="margin-left:10px;">RTL</button>
-    </div>
+    <h1 id="main-title">SUSTAINABILITY THROUGH THE AGES</h1>
+    <p class="subtitle" id="subtitle">
+      Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.
+    </p>
   </header>
 
   <main class="timeline-container" tabindex="0" aria-label="Intel Sustainability Timeline">
     <section class="card" tabindex="0" aria-label="1968: Intel was founded in 1968 by Robert Noyce and Gordon Moore.">
       <img src="img/1.jpg" alt="Intel Founded">
-      <h2>1968</h2>
-      <p class="description">Intel was founded in 1968 by Robert Noyce and Gordon Moore.</p>
+      <h2 data-year="1968">1968</h2>
+      <p class="description" data-desc="1968">Intel was founded in 1968 by Robert Noyce and Gordon Moore.</p>
     </section>
     <section class="card" tabindex="0" aria-label="1971: Intel introduced the world’s first microprocessor, the 4004.">
       <img src="img/2.jpg" alt="First Microprocessor">
-      <h2>1971</h2>
-      <p class="description">Intel introduced the world’s first microprocessor, the 4004.</p>
+      <h2 data-year="1971">1971</h2>
+      <p class="description" data-desc="1971">Intel introduced the world’s first microprocessor, the 4004.</p>
     </section>
     <section class="card" tabindex="0" aria-label="1978: The 8086 processor was launched, starting the x86 architecture.">
       <img src="img/3.jpg" alt="8086 Processor">
-      <h2>1978</h2>
-      <p class="description">The 8086 processor was launched, starting the x86 architecture.</p>
+      <h2 data-year="1978">1978</h2>
+      <p class="description" data-desc="1978">The 8086 processor was launched, starting the x86 architecture.</p>
     </section>
     <section class="card" tabindex="0" aria-label="1985: Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.">
       <img src="img/4.jpg" alt="386 Processor">
-      <h2>1985</h2>
-      <p class="description">Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.</p>
+      <h2 data-year="1985">1985</h2>
+      <p class="description" data-desc="1985">Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.</p>
     </section>
     <section class="card" tabindex="0" aria-label="1991: The 'Intel Inside' marketing campaign launches, becoming one of the most recognizable tech branding efforts globally.">
       <img src="img/7.jpg" alt="Intel Inside Campaign">
-      <h2>1991</h2>
-      <p class="description">The 'Intel Inside' marketing campaign launches, becoming one of the most recognizable tech branding efforts globally.</p>
+      <h2 data-year="1991">1991</h2>
+      <p class="description" data-desc="1991">The 'Intel Inside' marketing campaign launches, becoming one of the most recognizable tech branding efforts globally.</p>
     </section>
     <section class="card" tabindex="0" aria-label="1993: Intel releases the Pentium processor, revolutionizing home computing and brand recognition.">
       <img src="img/5.jpg" alt="Pentium Processor">
-      <h2>1993</h2>
-      <p class="description">Intel releases the Pentium processor, revolutionizing home computing and brand recognition.</p>
+      <h2 data-year="1993">1993</h2>
+      <p class="description" data-desc="1993">Intel releases the Pentium processor, revolutionizing home computing and brand recognition.</p>
     </section>
     <section class="card" tabindex="0" aria-label="2006: Intel introduces the Intel Core processor family, improving energy efficiency and performance.">
       <img src="img/6.jpg" alt="Core Processor">
-      <h2>2006</h2>
-      <p class="description">Intel introduces the Intel Core processor family, improving energy efficiency and performance.</p>
+      <h2 data-year="2006">2006</h2>
+      <p class="description" data-desc="2006">Intel introduces the Intel Core processor family, improving energy efficiency and performance.</p>
     </section>
     <section class="card" tabindex="0" aria-label="2020: Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.">
       <img src="img/8.jpg" alt="Sustainability Milestone">
-      <h2>2020</h2>
-      <p class="description">Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.</p>
+      <h2 data-year="2020">2020</h2>
+      <p class="description" data-desc="2020">Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.</p>
     </section>
     <section class="card" tabindex="0" aria-label="2023: Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation.">
       <img src="img/9.jpg" alt="AI and Future Tech">
-      <h2>2023</h2>
-      <p class="description">Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation.</p>
+      <h2 data-year="2023">2023</h2>
+      <p class="description" data-desc="2023">Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation.</p>
     </section>
   </main>
 
-  <footer>
+  <footer id="footer-text">
     Scroll to view timeline | Hover or focus on cards to learn more!
+    <div style="margin-top:20px;">
+      <label for="lang-select" style="font-size:1em;">Language:</label>
+      <select id="lang-select" aria-label="Select language">
+        <option value="en" selected>English</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
   </footer>
 
   <script>
-    // Reveal animation
+    // Translations for English, Arabic, French, Spanish
+    const translations = {
+      en: {
+        dir: "ltr",
+        title: "SUSTAINABILITY THROUGH THE AGES",
+        subtitle: "Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.",
+        footer: "Scroll to view timeline | Hover or focus on cards to learn more!",
+        timeline: {
+          "1968": "Intel was founded in 1968 by Robert Noyce and Gordon Moore.",
+          "1971": "Intel introduced the world’s first microprocessor, the 4004.",
+          "1978": "The 8086 processor was launched, starting the x86 architecture.",
+          "1985": "Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.",
+          "1991": "The 'Intel Inside' marketing campaign launches, becoming one of the most recognizable tech branding efforts globally.",
+          "1993": "Intel releases the Pentium processor, revolutionizing home computing and brand recognition.",
+          "2006": "Intel introduces the Intel Core processor family, improving energy efficiency and performance.",
+          "2020": "Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.",
+          "2023": "Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation."
+        }
+      },
+      ar: {
+        dir: "rtl",
+        title: "الاستدامة عبر العصور",
+        subtitle: "استكشف رحلة إنتل عبر الزمن واكتشف كيف ساهم التزامنا بالابتكار في تشكيل مستقبل أكثر استدامة للتكنولوجيا وكوكبنا.",
+        footer: "مرر لعرض الجدول الزمني | مرر أو ركز على البطاقات لمعرفة المزيد!",
+        timeline: {
+          "1968": "تأسست إنتل في عام 1968 على يد روبرت نويس وجوردون مور.",
+          "1971": "قدمت إنتل أول معالج دقيق في العالم، 4004.",
+          "1978": "تم إطلاق معالج 8086، بداية معمارية x86.",
+          "1985": "قدمت إنتل معالج 386 بمعمارية 32 بت، مما أحدث ثورة في أداء الحواسيب.",
+          "1991": "انطلاق حملة 'إنتل إنسايد' التسويقية، لتصبح من أشهر العلامات التقنية عالميًا.",
+          "1993": "إطلاق معالج بنتيوم الذي أحدث ثورة في الحوسبة المنزلية.",
+          "2006": "قدمت إنتل عائلة معالجات Intel Core، مع تحسين الكفاءة والأداء.",
+          "2020": "حققت إنتل استخدام الكهرباء المتجددة بنسبة 100% في عملياتها بالولايات المتحدة.",
+          "2023": "استثمرت إنتل بقوة في الذكاء الاصطناعي وتقنيات الرقائق المستقبلية."
+        }
+      },
+      fr: {
+        dir: "ltr",
+        title: "LA DURABILITÉ À TRAVERS LES ÂGES",
+        subtitle: "Découvrez le parcours d'Intel à travers le temps et comment notre engagement envers l'innovation a façonné un avenir plus durable pour la technologie et notre planète.",
+        footer: "Faites défiler pour voir la chronologie | Survolez ou concentrez-vous sur les cartes pour en savoir plus !",
+        timeline: {
+          "1968": "Intel a été fondée en 1968 par Robert Noyce et Gordon Moore.",
+          "1971": "Intel a introduit le premier microprocesseur au monde, le 4004.",
+          "1978": "Le processeur 8086 a été lancé, début de l'architecture x86.",
+          "1985": "Intel présente le processeur 386 à architecture 32 bits, ouvrant une nouvelle ère de performance.",
+          "1991": "La campagne marketing 'Intel Inside' démarre, devenant l'une des plus reconnues au monde.",
+          "1993": "Intel lance le processeur Pentium, révolutionnant l'informatique domestique.",
+          "2006": "Intel introduit la famille de processeurs Intel Core, améliorant l'efficacité énergétique et la performance.",
+          "2020": "Intel atteint 100% d'électricité renouvelable dans ses opérations américaines.",
+          "2023": "Intel investit massivement dans l'IA et les technologies de puces de nouvelle génération."
+        }
+      },
+      es: {
+        dir: "ltr",
+        title: "SOSTENIBILIDAD A TRAVÉS DE LOS TIEMPOS",
+        subtitle: "Explora el viaje de Intel a través del tiempo y descubre cómo nuestro compromiso con la innovación ha forjado un futuro más sostenible para la tecnología y nuestro planeta.",
+        footer: "Desplázate para ver la línea de tiempo | Pasa el cursor o enfoca las tarjetas para saber más.",
+        timeline: {
+          "1968": "Intel fue fundada en 1968 por Robert Noyce y Gordon Moore.",
+          "1971": "Intel presentó el primer microprocesador del mundo, el 4004.",
+          "1978": "Se lanzó el procesador 8086, comenzando la arquitectura x86.",
+          "1985": "Intel presenta el procesador 386 con arquitectura de 32 bits, marcando una nueva era de rendimiento.",
+          "1991": "La campaña 'Intel Inside' se lanza, convirtiéndose en una de las más reconocidas del mundo.",
+          "1993": "Intel lanza el procesador Pentium, revolucionando la informática doméstica.",
+          "2006": "Intel introduce la familia de procesadores Intel Core, mejorando la eficiencia energética y el rendimiento.",
+          "2020": "Intel logra el uso de electricidad 100% renovable en operaciones en EE. UU.",
+          "2023": "Intel invierte fuertemente en IA y tecnología de chips de próxima generación."
+        }
+      }
+    };
+
+    // Reveal animation for cards
     const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -274,24 +353,32 @@
     }, { threshold: 0.1 });
     cards.forEach(card => observer.observe(card));
 
-    // RTL/LTR toggle
-    const rtlToggle = document.getElementById('rtl-toggle');
-    rtlToggle.addEventListener('click', function() {
-      const body = document.body;
-      if (!body.classList.contains('rtl')) {
-        body.classList.add('rtl');
-        document.documentElement.setAttribute('dir', 'rtl');
-        rtlToggle.textContent = 'LTR';
-        rtlToggle.setAttribute('aria-label', 'Switch to left-to-right layout');
-        rtlToggle.setAttribute('aria-pressed', 'true');
-      } else {
-        body.classList.remove('rtl');
-        document.documentElement.setAttribute('dir', 'ltr');
-        rtlToggle.textContent = 'RTL';
-        rtlToggle.setAttribute('aria-label', 'Switch to right-to-left layout');
-        rtlToggle.setAttribute('aria-pressed', 'false');
-      }
+    // Language selector logic
+    const langSelect = document.getElementById('lang-select');
+    langSelect.addEventListener('change', function() {
+      setLanguage(this.value);
     });
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = t.dir;
+      document.body.classList.toggle('rtl', t.dir === 'rtl');
+      document.getElementById('main-title').textContent = t.title;
+      document.getElementById('subtitle').textContent = t.subtitle;
+      document.getElementById('footer-text').childNodes[0].textContent = t.footer + " ";
+
+      // Update timeline descriptions
+      document.querySelectorAll('.card').forEach(card => {
+        const year = card.querySelector('h2').getAttribute('data-year');
+        const desc = card.querySelector('.description');
+        desc.textContent = t.timeline[year];
+        card.setAttribute('aria-label', `${year}: ${t.timeline[year]}`);
+      });
+    }
+
+    // Set default language on load
+    setLanguage(langSelect.value);
 
     // Keyboard navigation for cards (left/right arrow)
     document.querySelector('.timeline-container').addEventListener('keydown', function(e) {
