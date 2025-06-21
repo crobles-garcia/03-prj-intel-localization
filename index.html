@@ -304,33 +304,20 @@
     </section>
   </main>
 
-  <!-- Subscription Form Section -->
-<section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <form class="p-4 border rounded bg-white shadow-sm" aria-label="Subscribe to Intel Sustainability Updates">
-        <h2 class="mb-3 text-center">
-          <span class="bi bi-envelope-fill" aria-hidden="true"></span>
-          <span class="ms-2">Subscribe for Updates</span>
-        </h2>
-        <div class="mb-3">
-          <label for="subscriber-email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
-        </div>
-        <button type="submit" class="btn btn-primary w-100" aria-label="Subscribe">Subscribe</button>
-        <div id="subscription-success" class="alert alert-success mt-3 d-none" role="alert">
-          Thank you for subscribing!
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
   <footer id="footer-text">
-    Scroll to view timeline | Hover or focus on cards to learn more!
-    <div style="margin-top:20px;">
+    <div>Scroll to view timeline | Hover or focus on cards to learn more!</div>
+    <form class="subscription-form mt-4 mx-auto" style="max-width:400px;" aria-label="Subscribe to Intel Sustainability Updates">
+      <div class="input-group">
+        <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
+        <button type="submit" class="btn btn-primary" aria-label="Subscribe">Subscribe</button>
+      </div>
+      <div id="subscription-success" class="alert alert-success mt-2 d-none" role="alert">
+        Thank you for subscribing!
+      </div>
+    </form>
+    <div class="mt-4">
       <label for="lang-select" style="font-size:1em;">Language:</label>
-      <select id="lang-select" aria-label="Select language">
+      <select id="lang-select" aria-label="Select language" class="form-select d-inline-block w-auto ms-2">
         <option value="en" selected>English</option>
         <option value="ar">العربية</option>
         <option value="fr">Français</option>
