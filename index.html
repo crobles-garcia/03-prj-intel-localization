@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -168,6 +168,34 @@
         display: block;
       }
     }
+
+    /* Add RTL support */
+    body.rtl .timeline-container {
+      flex-direction: row-reverse;
+    }
+    body.rtl {
+      direction: rtl;
+    }
+    /* Focus style for accessibility */
+    .card:focus {
+      outline: 3px solid #00a5e0;
+      z-index: 1;
+    }
+    /* Show description on focus for keyboard users */
+    .card:focus .description {
+      display: block !important;
+    }
+    /* Visually hidden utility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -175,62 +203,66 @@
     <img src="img/intel-header-logo.svg" alt="Intel Logo" class="logo">
     <h1>SUSTAINABILITY THROUGH THE AGES</h1>
     <p class="subtitle">Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.</p>
+    <div style="margin-top:20px;">
+      <label for="rtl-toggle" style="font-size:1em;">Switch direction:</label>
+      <button id="rtl-toggle" aria-pressed="false" aria-label="Switch to right-to-left layout" style="margin-left:10px;">RTL</button>
+    </div>
   </header>
 
-  <main class="timeline-container">
-    <section class="card">
+  <main class="timeline-container" tabindex="0" aria-label="Intel Sustainability Timeline">
+    <section class="card" tabindex="0" aria-label="1968: Intel was founded in 1968 by Robert Noyce and Gordon Moore.">
       <img src="img/1.jpg" alt="Intel Founded">
       <h2>1968</h2>
       <p class="description">Intel was founded in 1968 by Robert Noyce and Gordon Moore.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="1971: Intel introduced the world’s first microprocessor, the 4004.">
       <img src="img/2.jpg" alt="First Microprocessor">
       <h2>1971</h2>
       <p class="description">Intel introduced the world’s first microprocessor, the 4004.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="1978: The 8086 processor was launched, starting the x86 architecture.">
       <img src="img/3.jpg" alt="8086 Processor">
       <h2>1978</h2>
       <p class="description">The 8086 processor was launched, starting the x86 architecture.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="1985: Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.">
       <img src="img/4.jpg" alt="386 Processor">
       <h2>1985</h2>
       <p class="description">Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="1991: The 'Intel Inside' marketing campaign launches, becoming one of the most recognizable tech branding efforts globally.">
       <img src="img/7.jpg" alt="Intel Inside Campaign">
       <h2>1991</h2>
       <p class="description">The 'Intel Inside' marketing campaign launches, becoming one of the most recognizable tech branding efforts globally.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="1993: Intel releases the Pentium processor, revolutionizing home computing and brand recognition.">
       <img src="img/5.jpg" alt="Pentium Processor">
       <h2>1993</h2>
       <p class="description">Intel releases the Pentium processor, revolutionizing home computing and brand recognition.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="2006: Intel introduces the Intel Core processor family, improving energy efficiency and performance.">
       <img src="img/6.jpg" alt="Core Processor">
       <h2>2006</h2>
       <p class="description">Intel introduces the Intel Core processor family, improving energy efficiency and performance.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="2020: Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.">
       <img src="img/8.jpg" alt="Sustainability Milestone">
       <h2>2020</h2>
       <p class="description">Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.</p>
     </section>
-    <section class="card">
+    <section class="card" tabindex="0" aria-label="2023: Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation.">
       <img src="img/9.jpg" alt="AI and Future Tech">
       <h2>2023</h2>
       <p class="description">Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation.</p>
     </section>
-      
   </main>
 
   <footer>
-    Scroll to view timeline | Hover over cards to learn more!
+    Scroll to view timeline | Hover or focus on cards to learn more!
   </footer>
 
   <script>
+    // Reveal animation
     const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -239,12 +271,42 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1
+    }, { threshold: 0.1 });
+    cards.forEach(card => observer.observe(card));
+
+    // RTL/LTR toggle
+    const rtlToggle = document.getElementById('rtl-toggle');
+    rtlToggle.addEventListener('click', function() {
+      const body = document.body;
+      if (!body.classList.contains('rtl')) {
+        body.classList.add('rtl');
+        document.documentElement.setAttribute('dir', 'rtl');
+        rtlToggle.textContent = 'LTR';
+        rtlToggle.setAttribute('aria-label', 'Switch to left-to-right layout');
+        rtlToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        body.classList.remove('rtl');
+        document.documentElement.setAttribute('dir', 'ltr');
+        rtlToggle.textContent = 'RTL';
+        rtlToggle.setAttribute('aria-label', 'Switch to right-to-left layout');
+        rtlToggle.setAttribute('aria-pressed', 'false');
+      }
     });
 
-    cards.forEach(card => {
-      observer.observe(card);
+    // Keyboard navigation for cards (left/right arrow)
+    document.querySelector('.timeline-container').addEventListener('keydown', function(e) {
+      const focusableCards = Array.from(document.querySelectorAll('.card'));
+      const current = document.activeElement;
+      let idx = focusableCards.indexOf(current);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const isRTL = document.body.classList.contains('rtl');
+        if ((e.key === 'ArrowRight' && !isRTL) || (e.key === 'ArrowLeft' && isRTL)) idx++;
+        else idx--;
+        if (idx < 0) idx = 0;
+        if (idx >= focusableCards.length) idx = focusableCards.length - 1;
+        focusableCards[idx].focus();
+      }
     });
   </script>
 </body>
