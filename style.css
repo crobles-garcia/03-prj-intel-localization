@@ -1,17 +1,147 @@
-.border-tile {
-  border: 4px solid #0071c5; /* Intel blue */
-  border-radius: 12px;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #003c71;
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(to bottom, #0071c5, #005b99);
+  color: white;
+  padding: 50px 20px 40px;
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto 25px;
+  display: block;
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin: 0 0 15px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  border-bottom: 3px solid white;
+  margin: 10px auto 0;
+}
+
+.subtitle {
+  font-size: 1em;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 30px 10px;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  height: 300px;
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.border-tile:hover {
+.card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
+}
+
+.card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 113, 197, 0.5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 576px) {
-  .border-tile {
-    margin-bottom: 1.5rem;
+.card img {
+  width: 115%;
+  height: 115%;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  left: -7.5%;
+  top: -7.5%;
+}
+
+.card h2,
+.card .description {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 12px 10px;
+  text-align: center;
+  background: rgba(0, 60, 113, 0.85);
+  margin: 0;
+}
+
+.card h2 {
+  bottom: 60px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.card .description {
+  bottom: 0;
+  font-size: 0.85em;
+  display: block;
+  height: 55px;
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.95em;
+  color: #555;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  .card h2, .card .description {
+    position: static;
+    background: #003c71;
+    color: white;
   }
 }
