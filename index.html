@@ -305,26 +305,27 @@
   </main>
 
   <footer id="footer-text">
-    <div>Scroll to view timeline | Hover or focus on cards to learn more!</div>
-    <form class="subscription-form mt-4 mx-auto" style="max-width:400px;" aria-label="Subscribe to Intel Sustainability Updates">
-      <div class="input-group">
-        <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
-        <button type="submit" class="btn btn-primary" aria-label="Subscribe">Subscribe</button>
-      </div>
-      <div id="subscription-success" class="alert alert-success mt-2 d-none" role="alert">
-        Thank you for subscribing!
-      </div>
-    </form>
-    <div class="mt-4">
-      <label for="lang-select" style="font-size:1em;">Language:</label>
-      <select id="lang-select" aria-label="Select language" class="form-select d-inline-block w-auto ms-2">
-        <option value="en" selected>English</option>
-        <option value="ar">العربية</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-      </select>
+  <div id="footer-message">Scroll to view timeline | Hover or focus on cards to learn more!</div>
+  <form class="subscription-form mt-4 mx-auto" style="max-width:400px;" aria-label="Subscribe to Intel Sustainability Updates">
+    <h2 style="font-size:1.2em; margin-bottom:1em; color:#003c71;">Subscribe Now</h2>
+    <div class="input-group">
+      <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
+      <button type="submit" class="btn btn-primary" aria-label="Subscribe">Subscribe</button>
     </div>
-  </footer>
+    <div id="subscription-success" class="alert alert-success mt-2 d-none" role="alert">
+      Thank you for subscribing!
+    </div>
+  </form>
+  <div class="mt-4">
+    <label for="lang-select" style="font-size:1em;">Language:</label>
+    <select id="lang-select" aria-label="Select language" class="form-select d-inline-block w-auto ms-2">
+      <option value="en" selected>English</option>
+      <option value="ar">العربية</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+</footer>
 
   <script>
     // Translations for English, Arabic, French, Spanish
@@ -424,7 +425,7 @@
       document.body.classList.toggle('rtl', t.dir === 'rtl');
       document.getElementById('main-title').textContent = t.title;
       document.getElementById('subtitle').textContent = t.subtitle;
-      document.getElementById('footer-text').childNodes[0].textContent = t.footer + " ";
+      document.getElementById('footer-message').textContent = t.footer;
 
       // Update timeline descriptions
       document.querySelectorAll('.card').forEach(card => {
