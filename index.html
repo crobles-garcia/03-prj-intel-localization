@@ -196,6 +196,55 @@
       clip: rect(0,0,0,0);
       border: 0;
     }
+
+    /* Subscription Form Styles */
+    .subscription-form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .subscription-form h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #003c71;
+    }
+
+    .subscription-form .form-label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #003c71;
+    }
+
+    .subscription-form .form-control {
+      border: 1px solid #0071c5;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    .subscription-form .btn-primary {
+      background-color: #0071c5;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .subscription-form .btn-primary:hover {
+      background-color: #005b99;
+    }
+
+    .subscription-form .alert {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -254,6 +303,28 @@
       <p class="description" data-desc="2023">Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation.</p>
     </section>
   </main>
+
+  <!-- Subscription Form Section -->
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <form class="p-4 border rounded bg-white shadow-sm" aria-label="Subscribe to Intel Sustainability Updates">
+        <h2 class="mb-3 text-center">
+          <span class="bi bi-envelope-fill" aria-hidden="true"></span>
+          <span class="ms-2">Subscribe for Updates</span>
+        </h2>
+        <div class="mb-3">
+          <label for="subscriber-email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
+        </div>
+        <button type="submit" class="btn btn-primary w-100" aria-label="Subscribe">Subscribe</button>
+        <div id="subscription-success" class="alert alert-success mt-3 d-none" role="alert">
+          Thank you for subscribing!
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
   <footer id="footer-text">
     Scroll to view timeline | Hover or focus on cards to learn more!
@@ -394,6 +465,32 @@
         if (idx >= focusableCards.length) idx = focusableCards.length - 1;
         focusableCards[idx].focus();
       }
+    });
+
+    // Subscription form handling
+    const subscriptionForm = document.querySelector('.subscription-form');
+    const subscriberEmail = document.getElementById('subscriber-email');
+    const subscriptionSuccess = document.getElementById('subscription-success');
+
+    subscriptionForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = subscriberEmail.value.trim();
+      if (email) {
+        // Here you would typically handle the subscription logic, e.g., sending the email to your server
+        console.log('Subscribed with email:', email);
+        subscriptionSuccess.classList.remove('d-none');
+        subscriberEmail.value = '';
+      }
+    });
+
+    // Subscription form handler
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('subscription-success').classList.remove('d-none');
+      setTimeout(() => {
+        document.getElementById('subscription-success').classList.add('d-none');
+        this.reset();
+      }, 3000);
     });
   </script>
 </body>

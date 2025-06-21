@@ -122,6 +122,24 @@ footer {
   padding: 20px;
 }
 
+.bootstrap-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bootstrap-section .card-title .bi {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+form .btn-primary {
+  background-color: #0071c5;
+  border: none;
+}
+form .btn-primary:hover, form .btn-primary:focus {
+  background-color: #005b99;
+}
+
 @media (max-width: 600px) {
   .timeline-container {
     flex-direction: column;
