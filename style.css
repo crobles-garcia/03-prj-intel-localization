@@ -140,6 +140,45 @@ form .btn-primary:hover, form .btn-primary:focus {
   background-color: #005b99;
 }
 
+.footer-timeline {
+  max-width: 1000px;
+  margin: 2em auto;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  text-align: left;
+  flex-wrap: wrap;
+}
+.footer-timeline-card {
+  flex: 1 1 250px;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px;
+}
+.footer-timeline-card h3 {
+  color: #003c71;
+  margin-bottom: 0.5em;
+}
+.footer-timeline-card a {
+  color: #0071c5;
+  text-decoration: underline;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.subscription-form {
+  max-width: 600px; /* was 400px */
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 600px) {
   .timeline-container {
     flex-direction: column;

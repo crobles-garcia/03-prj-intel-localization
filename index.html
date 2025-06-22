@@ -307,17 +307,34 @@
   <footer id="footer-text">
   <div id="footer-message">Scroll to view timeline | Hover or focus on cards to learn more!</div>
 
-  <section class="footer-timeline" style="max-width:700px;margin:2em auto 2em auto;text-align:left;">
+  <section class="footer-timeline" style="max-width:1000px;margin:2em auto;display:flex;gap:32px;justify-content:center;align-items:stretch;text-align:left;flex-wrap:wrap;">
+  <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
     <h3 style="color:#003c71;margin-bottom:0.5em;">RISE Strategy</h3>
     <p style="margin-top:0;">In 2020, Intel launched the RISE strategy—focusing on Responsibility, Inclusion, Sustainability, and Enablement—aiming to improve life globally by 2030.</p>
-    <h3 style="color:#003c71;margin-bottom:0.5em;margin-top:1.5em;">Commitment</h3>
+    <a href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+  </div>
+  <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
+    <h3 style="color:#003c71;margin-bottom:0.5em;">Commitment</h3>
     <p style="margin-top:0;">In 2022, Intel achieved 100% renewable energy usage in U.S. operations and set aggressive sustainability targets, including achieving net positive water and zero waste to landfills.</p>
-    <h3 style="color:#003c71;margin-bottom:0.5em;margin-top:1.5em;">Water &amp; Waste</h3>
+    <a href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+  </div>
+  <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
+    <h3 style="color:#003c71;margin-bottom:0.5em;">Water &amp; Waste</h3>
     <p style="margin-top:0;">Intel collaborates globally to support responsible water usage and ecosystem protection while working to reduce waste and improve environmental impact.</p>
-  </section>
+    <a href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+  </div>
+</section>
 
-  <form class="subscription-form mt-4 mx-auto" style="max-width:400px;" aria-label="Subscribe to Intel Sustainability Updates">
-    <h2 style="font-size:1.2em; margin-bottom:1em; color:#003c71;">Subscribe Now</h2>
+  <form class="subscription-form mt-4 mx-auto" style="max-width:600px;" aria-label="Subscribe to Intel Sustainability Updates">
+    <div style="display:flex; flex-direction:column; align-items:center;">
+      <h2 style="font-size:1.2em; margin-bottom:0.5em; color:#003c71; display:flex; align-items:center; gap:0.5em;">
+        <span style="font-size:1.3em;">✉️</span>
+        Subscribe to Our Sustainability Newsletter
+      </h2>
+      <label for="subscriber-email" class="form-label" style="color:#003c71; font-weight:bold; margin-bottom:1em; text-align:center;">
+        Enter your email address
+      </label>
+    </div>
     <div class="input-group">
       <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
       <button type="submit" class="btn btn-primary" aria-label="Subscribe">Subscribe</button>
@@ -334,6 +351,9 @@
       <option value="fr">Français</option>
       <option value="es">Español</option>
     </select>
+  </div>
+  <div style="margin-top:2em; color:#888; font-size:0.95em;">
+    © 2025 Intel Corporation. All rights reserved.
   </div>
 </footer>
 
