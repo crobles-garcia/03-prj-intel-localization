@@ -173,9 +173,10 @@
     body.rtl .timeline-container {
       flex-direction: row-reverse;
     }
-    body.rtl {
-      direction: rtl;
-    }
+    body.rtl, body.rtl * {
+  direction: rtl;
+  text-align: right;
+}
     /* Focus style for accessibility */
     .card:focus {
       outline: 3px solid #00a5e0;
@@ -637,6 +638,14 @@
         this.reset();
       }, 3000);
     });
+
+    function setLanguage(lang) {
+  const t = translations[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = t.dir;
+  document.body.classList.toggle('rtl', t.dir === 'rtl');
+  // ...rest of your translation logic
+}
   </script>
 </body>
 </html>

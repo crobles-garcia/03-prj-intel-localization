@@ -288,3 +288,8 @@ form .btn-primary:hover, form .btn-primary:focus {
     color: white;
   }
 }
+
+body.rtl, body.rtl * {
+  direction: rtl !important;
+  text-align: right !important;
+}
