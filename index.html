@@ -421,7 +421,7 @@
       <div style="display:flex; flex-direction:column; align-items:center;">
         <h2 id="subscribe-heading" style="font-size:1.2em; margin-bottom:0.5em; color:#003c71; display:flex; align-items:center; gap:0.5em;">
           <span style="font-size:1.3em;">✉️</span>
-          Subscribe to Our Sustainability Newsletter
+          <span id="subscribe-heading-text">Subscribe to Our Sustainability Newsletter</span>
         </h2>
         <label id="subscribe-label" for="subscriber-email" class="form-label" style="color:#003c71; font-weight:bold; margin-bottom:1em; text-align:center;">
           Enter your email address
@@ -631,10 +631,10 @@
       document.getElementById('footer-water-link').textContent = t.footerTimeline.readMore;
 
       // Subscribe section
-      document.getElementById('subscribe-heading').textContent = t.subscribe.heading;
       document.getElementById('subscribe-label').textContent = t.subscribe.label;
       document.getElementById('subscribe-button').textContent = t.subscribe.button;
       document.getElementById('lang-label').textContent = t.subscribe.language;
+      document.getElementById('subscribe-heading-text').textContent = t.subscribe.heading;
     }
 
     // Set default language on load
