@@ -251,6 +251,20 @@ form .btn-primary:hover, form .btn-primary:focus {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Make the subscribe button background dark blue and text white */
+.footer-subscribe-bg .btn-primary,
+.subscription-form .btn-primary {
+  background-color: #0071c5 !important;
+  color: #fff !important;
+  font-weight: bold;
+  border: none;
+}
+
+.footer-subscribe-bg .btn-primary:hover,
+.subscription-form .btn-primary:hover {
+  background-color: #005b99 !important;
+}
+
 @media (max-width: 600px) {
   .timeline-container {
     flex-direction: column;
