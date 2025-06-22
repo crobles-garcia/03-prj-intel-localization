@@ -157,6 +157,10 @@ form .btn-primary:hover, form .btn-primary:focus {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%; /* Ensures equal height for all cards */
 }
 .footer-timeline-card h3 {
   color: #003c71;
@@ -167,16 +171,46 @@ form .btn-primary:hover, form .btn-primary:focus {
   text-decoration: underline;
   font-weight: bold;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: auto; /* Pushes the link to the bottom */
+  align-self: flex-start; /* Optional: aligns link to the left, remove for center */
 }
 
-.subscription-form {
-  max-width: 600px; /* was 400px */
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* General text color for light backgrounds */
+.footer-timeline-card,
+.subscription-form,
+.footer-timeline-card h3,
+.subscription-form h2,
+.subscription-form .form-label {
+  color: #003c71;
+}
+
+/* Copyright section: darker grey for better contrast */
+.footer-copyright {
+  background: #f5f6fa;
+  color: #444; /* was #888 */
+  font-size: 0.95em;
+  padding: 1.5em 0 1em 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Button: ensure white text on blue */
+.subscription-form .btn-primary {
+  background-color: #0071c5;
+  color: #fff;
+}
+
+/* Button hover/focus: still white text */
+.subscription-form .btn-primary:hover,
+.subscription-form .btn-primary:focus {
+  background-color: #005b99;
+  color: #fff;
+}
+
+/* Input placeholder: darker for contrast */
+.subscription-form .form-control::placeholder {
+  color: #444;
+  opacity: 1;
 }
 
 @media (max-width: 600px) {
