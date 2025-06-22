@@ -435,16 +435,7 @@
         Thank you for subscribing!
       </div>
     </form>
-    <div class="mt-4">
-      <label id="lang-label" for="lang-select" style="font-size:1em;">Language:</label>
-      <select id="lang-select" aria-label="Select language" class="form-select d-inline-block w-auto ms-2">
-        <option value="en" selected>English</option>
-        <option value="ar">العربية</option>
-        <option value="fr">Français</option>
-        <option value="es">Español</option>
-      </select>
-    </div>
-  </div>
+ 
 
   <div class="footer-copyright">
     © 2025 Intel Corporation. All rights reserved.
@@ -602,43 +593,8 @@
       setLanguage(this.value);
     });
 
-    function setLanguage(lang) {
-      const t = translations[lang];
-      document.documentElement.lang = lang;
-      document.documentElement.dir = t.dir;
-      document.body.classList.toggle('rtl', t.dir === 'rtl');
-      document.getElementById('main-title').textContent = t.title;
-      document.getElementById('subtitle').textContent = t.subtitle;
-      document.getElementById('footer-message').textContent = t.footer;
-
-      // Timeline descriptions
-      document.querySelectorAll('.card').forEach(card => {
-        const year = card.querySelector('h2').getAttribute('data-year');
-        const desc = card.querySelector('.description');
-        desc.textContent = t.timeline[year];
-        card.setAttribute('aria-label', `${year}: ${t.timeline[year]}`);
-      });
-
-      // Footer timeline
-      document.getElementById('footer-rise-title').textContent = t.footerTimeline.riseTitle;
-      document.getElementById('footer-rise-desc').textContent = t.footerTimeline.riseDesc;
-      document.getElementById('footer-rise-link').textContent = t.footerTimeline.readMore;
-      document.getElementById('footer-commitment-title').textContent = t.footerTimeline.commitmentTitle;
-      document.getElementById('footer-commitment-desc').textContent = t.footerTimeline.commitmentDesc;
-      document.getElementById('footer-commitment-link').textContent = t.footerTimeline.readMore;
-      document.getElementById('footer-water-title').textContent = t.footerTimeline.waterTitle;
-      document.getElementById('footer-water-desc').textContent = t.footerTimeline.waterDesc;
-      document.getElementById('footer-water-link').textContent = t.footerTimeline.readMore;
-
-      // Subscribe section
-      document.getElementById('subscribe-label').textContent = t.subscribe.label;
-      document.getElementById('subscribe-button').textContent = t.subscribe.button;
-      document.getElementById('lang-label').textContent = t.subscribe.language;
-      document.getElementById('subscribe-heading-text').textContent = t.subscribe.heading;
-    }
-
     // Set default language on load
-    setLanguage(langSelect.value);
+    setLanguage('en'); // or your preferred default
 
     // Keyboard navigation for cards (left/right arrow)
     document.querySelector('.timeline-container').addEventListener('keydown', function(e) {
