@@ -181,13 +181,13 @@ form .btn-primary:hover, form .btn-primary:focus {
 .footer-timeline-card h3,
 .subscription-form h2,
 .subscription-form .form-label {
-  color: #003c71;
+  color: #003c71 !important;
 }
 
 /* Copyright section: darker grey for better contrast */
 .footer-copyright {
-  background: #f5f6fa;
-  color: #444; /* was #888 */
+  background: #fff;
+  color: #003c71;
   font-size: 0.95em;
   padding: 1.5em 0 1em 0;
   margin-top: 0;
@@ -211,6 +211,44 @@ form .btn-primary:hover, form .btn-primary:focus {
 .subscription-form .form-control::placeholder {
   color: #444;
   opacity: 1;
+}
+
+.subscription-form .form-control {
+  color: #003c71;
+  background: #fff;
+}
+
+.footer-timeline-bg {
+  background: #f5f6fa;
+  padding: 2em 0 1em 0;
+}
+
+.footer-subscribe-bg {
+  background: #0071c5;
+  padding: 2em 0 1em 0;
+}
+
+.footer-subscribe-bg label,
+.footer-subscribe-bg h2,
+.footer-subscribe-bg .form-label,
+.footer-subscribe-bg select,
+.footer-subscribe-bg option,
+.footer-subscribe-bg .mt-4 {
+  color: #222 !important;
+}
+
+.footer-subscribe-bg .mt-4 label {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.subscription-form {
+  max-width: 600px;
+  margin: 0 auto 1em auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 600px) {

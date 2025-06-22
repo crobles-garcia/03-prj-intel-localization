@@ -245,6 +245,97 @@
     .subscription-form .alert {
       display: none;
     }
+
+    .footer-timeline-bg {
+      background: #f0f4f8;
+      padding: 40px 0;
+    }
+
+    .footer-timeline {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      align-items: stretch;
+      text-align: left;
+      flex-wrap: wrap;
+    }
+
+    .footer-timeline-card {
+      flex: 1 1 250px;
+      min-width: 220px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 24px;
+    }
+
+    .footer-timeline-card h3 {
+      color: #003c71;
+      margin-bottom: 0.5em;
+    }
+
+    .footer-timeline-card p {
+      margin-top: 0;
+    }
+
+    .footer-timeline-card a {
+      color: #0071c5;
+      text-decoration: underline;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1em;
+    }
+
+    .footer-subscribe-bg {
+      background: #003c71;
+      color: white;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin: 2em 0;
+    }
+
+    .footer-subscribe-bg h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .footer-subscribe-bg .form-label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .footer-subscribe-bg .form-control {
+      border: 1px solid #00a5e0;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 15px;
+      background: #fff;
+      color: #003c71;
+    }
+
+    .footer-subscribe-bg .btn-primary {
+      background-color: #00a5e0;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .footer-subscribe-bg .btn-primary:hover {
+      background-color: #0071c5;
+    }
+
+    .footer-copyright {
+      margin-top: 2em;
+      color: #888;
+      font-size: 0.95em;
+    }
   </style>
 </head>
 <body>
@@ -307,52 +398,57 @@
   <footer id="footer-text">
   <div id="footer-message">Scroll to view timeline | Hover or focus on cards to learn more!</div>
 
-  <section class="footer-timeline" style="max-width:1000px;margin:2em auto;display:flex;gap:32px;justify-content:center;align-items:stretch;text-align:left;flex-wrap:wrap;">
-  <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
-    <h3 style="color:#003c71;margin-bottom:0.5em;">RISE Strategy</h3>
-    <p style="margin-top:0;">In 2020, Intel launched the RISE strategy—focusing on Responsibility, Inclusion, Sustainability, and Enablement—aiming to improve life globally by 2030.</p>
-    <a href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+  <div class="footer-timeline-bg">
+    <section class="footer-timeline">
+      <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
+        <h3 id="footer-rise-title" style="color:#003c71;margin-bottom:0.5em;">RISE Strategy</h3>
+        <p id="footer-rise-desc" style="margin-top:0;">In 2020, Intel launched the RISE strategy—focusing on Responsibility, Inclusion, Sustainability, and Enablement—aiming to improve life globally by 2030.</p>
+        <a id="footer-rise-link" href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+      </div>
+      <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
+        <h3 id="footer-commitment-title" style="color:#003c71;margin-bottom:0.5em;">Commitment</h3>
+        <p id="footer-commitment-desc" style="margin-top:0;">In 2022, Intel achieved 100% renewable energy usage in U.S. operations and set aggressive sustainability targets, including achieving net positive water and zero waste to landfills.</p>
+        <a id="footer-commitment-link" href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+      </div>
+      <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
+        <h3 id="footer-water-title" style="color:#003c71;margin-bottom:0.5em;">Water &amp; Waste</h3>
+        <p id="footer-water-desc" style="margin-top:0;">Intel collaborates globally to support responsible water usage and ecosystem protection while working to reduce waste and improve environmental impact.</p>
+        <a id="footer-water-link" href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
+      </div>
+    </section>
   </div>
-  <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
-    <h3 style="color:#003c71;margin-bottom:0.5em;">Commitment</h3>
-    <p style="margin-top:0;">In 2022, Intel achieved 100% renewable energy usage in U.S. operations and set aggressive sustainability targets, including achieving net positive water and zero waste to landfills.</p>
-    <a href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
-  </div>
-  <div class="footer-timeline-card" style="flex:1 1 250px;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:24px;">
-    <h3 style="color:#003c71;margin-bottom:0.5em;">Water &amp; Waste</h3>
-    <p style="margin-top:0;">Intel collaborates globally to support responsible water usage and ecosystem protection while working to reduce waste and improve environmental impact.</p>
-    <a href="#" style="color:#0071c5;text-decoration:underline;font-weight:bold;display:inline-block;margin-top:1em;">Read more</a>
-  </div>
-</section>
 
-  <form class="subscription-form mt-4 mx-auto" style="max-width:600px;" aria-label="Subscribe to Intel Sustainability Updates">
-    <div style="display:flex; flex-direction:column; align-items:center;">
-      <h2 style="font-size:1.2em; margin-bottom:0.5em; color:#003c71; display:flex; align-items:center; gap:0.5em;">
-        <span style="font-size:1.3em;">✉️</span>
-        Subscribe to Our Sustainability Newsletter
-      </h2>
-      <label for="subscriber-email" class="form-label" style="color:#003c71; font-weight:bold; margin-bottom:1em; text-align:center;">
-        Enter your email address
-      </label>
+  <div class="footer-subscribe-bg">
+    <form class="subscription-form mt-4 mx-auto" aria-label="Subscribe to Intel Sustainability Updates">
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <h2 id="subscribe-heading" style="font-size:1.2em; margin-bottom:0.5em; color:#003c71; display:flex; align-items:center; gap:0.5em;">
+          <span style="font-size:1.3em;">✉️</span>
+          Subscribe to Our Sustainability Newsletter
+        </h2>
+        <label id="subscribe-label" for="subscriber-email" class="form-label" style="color:#003c71; font-weight:bold; margin-bottom:1em; text-align:center;">
+          Enter your email address
+        </label>
+      </div>
+      <div class="input-group">
+        <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
+        <button id="subscribe-button" type="submit" class="btn btn-primary" aria-label="Subscribe">Subscribe</button>
+      </div>
+      <div id="subscription-success" class="alert alert-success mt-2 d-none" role="alert">
+        Thank you for subscribing!
+      </div>
+    </form>
+    <div class="mt-4">
+      <label id="lang-label" for="lang-select" style="font-size:1em;">Language:</label>
+      <select id="lang-select" aria-label="Select language" class="form-select d-inline-block w-auto ms-2">
+        <option value="en" selected>English</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
     </div>
-    <div class="input-group">
-      <input type="email" class="form-control" id="subscriber-email" placeholder="name@example.com" required aria-required="true">
-      <button type="submit" class="btn btn-primary" aria-label="Subscribe">Subscribe</button>
-    </div>
-    <div id="subscription-success" class="alert alert-success mt-2 d-none" role="alert">
-      Thank you for subscribing!
-    </div>
-  </form>
-  <div class="mt-4">
-    <label for="lang-select" style="font-size:1em;">Language:</label>
-    <select id="lang-select" aria-label="Select language" class="form-select d-inline-block w-auto ms-2">
-      <option value="en" selected>English</option>
-      <option value="ar">العربية</option>
-      <option value="fr">Français</option>
-      <option value="es">Español</option>
-    </select>
   </div>
-  <div style="margin-top:2em; color:#888; font-size:0.95em;">
+
+  <div class="footer-copyright">
     © 2025 Intel Corporation. All rights reserved.
   </div>
 </footer>
@@ -375,6 +471,21 @@
           "2006": "Intel introduces the Intel Core processor family, improving energy efficiency and performance.",
           "2020": "Intel achieves 100% renewable electricity use in U.S. operations, furthering its commitment to sustainability.",
           "2023": "Intel invests heavily in AI and next-gen chip technology, shaping the future of data-centric innovation."
+        },
+        footerTimeline: {
+          riseTitle: "RISE Strategy",
+          riseDesc: "In 2020, Intel launched the RISE strategy—focusing on Responsibility, Inclusion, Sustainability, and Enablement—aiming to improve life globally by 2030.",
+          commitmentTitle: "Commitment",
+          commitmentDesc: "In 2022, Intel achieved 100% renewable energy usage in U.S. operations and set aggressive sustainability targets, including achieving net positive water and zero waste to landfills.",
+          waterTitle: "Water & Waste",
+          waterDesc: "Intel collaborates globally to support responsible water usage and ecosystem protection while working to reduce waste and improve environmental impact.",
+          readMore: "Read more"
+        },
+        subscribe: {
+          heading: "Subscribe to Our Sustainability Newsletter",
+          label: "Enter your email address",
+          button: "Subscribe",
+          language: "Language:"
         }
       },
       ar: {
@@ -392,6 +503,21 @@
           "2006": "قدمت إنتل عائلة معالجات Intel Core، مع تحسين الكفاءة والأداء.",
           "2020": "حققت إنتل استخدام الكهرباء المتجددة بنسبة 100% في عملياتها بالولايات المتحدة.",
           "2023": "استثمرت إنتل بقوة في الذكاء الاصطناعي وتقنيات الرقائق المستقبلية."
+        },
+        footerTimeline: {
+          riseTitle: "استراتيجية RISE",
+          riseDesc: "في عام 2020، أطلقت إنتل استراتيجية RISE التي تركز على المسؤولية، الشمول، الاستدامة، والتمكين، بهدف تحسين الحياة عالميًا بحلول عام 2030.",
+          commitmentTitle: "الالتزام",
+          commitmentDesc: "في عام 2022، حققت إنتل استخدام الطاقة المتجددة بنسبة 100% في عملياتها بالولايات المتحدة وحددت أهداف استدامة طموحة، بما في ذلك تحقيق صافي إيجابي للمياه وصفر نفايات إلى المدافن.",
+          waterTitle: "المياه والنفايات",
+          waterDesc: "تتعاون إنتل عالميًا لدعم الاستخدام المسؤول للمياه وحماية النظم البيئية مع العمل على تقليل النفايات وتحسين الأثر البيئي.",
+          readMore: "اقرأ المزيد"
+        },
+        subscribe: {
+          heading: "اشترك في نشرتنا الإخبارية للاستدامة",
+          label: "أدخل بريدك الإلكتروني",
+          button: "اشترك",
+          language: "اللغة:"
         }
       },
       fr: {
@@ -409,6 +535,21 @@
           "2006": "Intel introduit la famille de processeurs Intel Core, améliorant l'efficacité énergétique et la performance.",
           "2020": "Intel atteint 100% d'électricité renouvelable dans ses opérations américaines.",
           "2023": "Intel investit massivement dans l'IA et les technologies de puces de nouvelle génération."
+        },
+        footerTimeline: {
+          riseTitle: "Stratégie RISE",
+          riseDesc: "En 2020, Intel a lancé la stratégie RISE—axée sur la Responsabilité, l’Inclusion, la Durabilité et l’Autonomisation—visant à améliorer la vie dans le monde entier d’ici 2030.",
+          commitmentTitle: "Engagement",
+          commitmentDesc: "En 2022, Intel a atteint 100% d’énergie renouvelable dans ses opérations américaines et s’est fixé des objectifs ambitieux de durabilité, dont l’eau positive nette et zéro déchet en décharge.",
+          waterTitle: "Eau & Déchets",
+          waterDesc: "Intel collabore à l’échelle mondiale pour soutenir l’utilisation responsable de l’eau et la protection des écosystèmes tout en réduisant les déchets et en améliorant l’impact environnemental.",
+          readMore: "En savoir plus"
+        },
+        subscribe: {
+          heading: "Abonnez-vous à notre newsletter sur la durabilité",
+          label: "Entrez votre adresse e-mail",
+          button: "S’abonner",
+          language: "Langue :"
         }
       },
       es: {
@@ -426,6 +567,21 @@
           "2006": "Intel introduce la familia de procesadores Intel Core, mejorando la eficiencia energética y el rendimiento.",
           "2020": "Intel logra el uso de electricidad 100% renovable en operaciones en EE. UU.",
           "2023": "Intel invierte fuertemente en IA y tecnología de chips de próxima generación."
+        },
+        footerTimeline: {
+          riseTitle: "Estrategia RISE",
+          riseDesc: "En 2020, Intel lanzó la estrategia RISE—centrada en Responsabilidad, Inclusión, Sostenibilidad y Capacitación—con el objetivo de mejorar la vida a nivel mundial para 2030.",
+          commitmentTitle: "Compromiso",
+          commitmentDesc: "En 2022, Intel logró el uso de energía 100% renovable en operaciones en EE. UU. y estableció objetivos de sostenibilidad agresivos, incluyendo agua neta positiva y cero residuos a vertederos.",
+          waterTitle: "Agua y Residuos",
+          waterDesc: "Intel colabora globalmente para apoyar el uso responsable del agua y la protección de los ecosistemas mientras trabaja para reducir los residuos y mejorar el impacto ambiental.",
+          readMore: "Leer más"
+        },
+        subscribe: {
+          heading: "Suscríbete a nuestro boletín de sostenibilidad",
+          label: "Introduce tu correo electrónico",
+          button: "Suscribirse",
+          language: "Idioma:"
         }
       }
     };
@@ -457,13 +613,30 @@
       document.getElementById('subtitle').textContent = t.subtitle;
       document.getElementById('footer-message').textContent = t.footer;
 
-      // Update timeline descriptions
+      // Timeline descriptions
       document.querySelectorAll('.card').forEach(card => {
         const year = card.querySelector('h2').getAttribute('data-year');
         const desc = card.querySelector('.description');
         desc.textContent = t.timeline[year];
         card.setAttribute('aria-label', `${year}: ${t.timeline[year]}`);
       });
+
+      // Footer timeline
+      document.getElementById('footer-rise-title').textContent = t.footerTimeline.riseTitle;
+      document.getElementById('footer-rise-desc').textContent = t.footerTimeline.riseDesc;
+      document.getElementById('footer-rise-link').textContent = t.footerTimeline.readMore;
+      document.getElementById('footer-commitment-title').textContent = t.footerTimeline.commitmentTitle;
+      document.getElementById('footer-commitment-desc').textContent = t.footerTimeline.commitmentDesc;
+      document.getElementById('footer-commitment-link').textContent = t.footerTimeline.readMore;
+      document.getElementById('footer-water-title').textContent = t.footerTimeline.waterTitle;
+      document.getElementById('footer-water-desc').textContent = t.footerTimeline.waterDesc;
+      document.getElementById('footer-water-link').textContent = t.footerTimeline.readMore;
+
+      // Subscribe section
+      document.getElementById('subscribe-heading').textContent = t.subscribe.heading;
+      document.getElementById('subscribe-label').textContent = t.subscribe.label;
+      document.getElementById('subscribe-button').textContent = t.subscribe.button;
+      document.getElementById('lang-label').textContent = t.subscribe.language;
     }
 
     // Set default language on load
